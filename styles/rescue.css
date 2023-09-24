@@ -1,0 +1,115 @@
+.top {
+  height: 60vh;
+  background-image: url("/public/images/aboutus/about__banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section .top__title {
+  color: white;
+}
+
+/* section case rescue */
+.rescue__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 20px;
+}
+
+.rescue__card {
+  background-color: transparent;
+  width: 100%;
+  height: 440px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.rescue__card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.rescue__card:hover .rescue__card-inner {
+  transform: rotateY(180deg);
+}
+
+.rescue__card-front,
+.rescue__card-back {
+  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+}
+
+.rescue__card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.rescue__card-front .date {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  background: var(--main-color);
+  border-radius: 1rem;
+}
+
+.rescue__card-front .day {
+  background-color: white;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  padding: 0.5rem 2rem;
+  font-size: 1.2rem;
+  font-weight: var(--font-weight-bold);
+}
+
+.rescue__card-front .month {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  padding: 0.5rem 2rem;
+  font-size: 1.2rem;
+  color: white;
+  font-weight: var(--font-weight-bold);
+}
+
+.rescue__card-back {
+  background: var(--main-color);
+  color: white;
+  transform: rotateY(180deg);
+  text-align: justify;
+  padding: 1.5rem;
+}
+
+.rescue__card-back .description {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.rescue__card-back .see__more {
+  text-align: end;
+  padding: 0.5rem 1.5rem;
+  border-radius: 16px;
+  background-color: white;
+  color: var(--main-color);
+}
